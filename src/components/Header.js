@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 
-class App extends Component {
+class Header extends Component {
   render() {
     return (
       <AppBar
         title="My App"
+        onLeftIconButtonTouchTap={this.props.toggleDrawer}
       />
     );
   }
 }
 
-export default App;
+export default Header;
