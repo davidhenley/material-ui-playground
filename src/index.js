@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-const App = (props) => {
-  return <div>Hi</div>;
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import MyApp from './components/App';
+
+// Required for Material-UI
+injectTapEventPlugin();
+
+class App extends Component {
+  render() {
+    return (
+      <MuiThemeProvider>
+        <MyApp />
+      </MuiThemeProvider>
+    );
+  }
 }
 
 render(<App />, document.querySelector('#root'));
